@@ -1,0 +1,18 @@
+<%= form_for @member do |f| %>
+  <p>
+  <%= f.label :name %>
+  <%= @member.name %>
+  </p>
+  
+  <p>
+  <%= f.label :yomi %>
+  <%= @member.yomi %>
+  </p>
+  
+  <p>
+  <%= f.label :phone %>
+  <%= @member.phone %>
+  </p>
+  <%= link_to "修正", edit_member_path(@member.id) %>
+  <%= link_to "戻る", members_path %>
+<% end %>

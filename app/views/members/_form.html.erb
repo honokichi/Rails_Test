@@ -1,0 +1,30 @@
+<%= form_for @member do |f| %>
+  <% if @member.errors.any? %>
+    <h3>入力した内容にエラーが<%= @member.errors.count %>件あります</h3>
+      <ul>
+      <% @member.errors.full_messages.each do | message | %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+  <% end %>
+  <p>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  </p>
+  
+  <p>
+  <%= f.label :yomi %>
+  <%= f.text_field :yomi %>
+  </p>
+  
+  <p>
+  <%= f.label :phone %>
+  <%= f.text_field :phone %>
+  </p>
+  
+  <% if @member.id %>
+    <%= f.submit "修正" %>
+  <% else %>
+    <%= f.submit "登録" %>
+  <% end %>
+<% end %>
